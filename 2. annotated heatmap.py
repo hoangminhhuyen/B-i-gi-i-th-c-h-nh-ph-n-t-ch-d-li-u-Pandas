@@ -10,9 +10,10 @@ movies["year"] = movies["title"].apply(lambda x: x[-5:-1])
 movies.year=pd.to_numeric(movies['year'],errors='coerce',downcast='integer')
 #print(movies)
 
-# Tao ra cac cot dummy
+# Tao dummies
 movies = movies.join(movies.genres.str.get_dummies())
 
+# Tao bang correlation
 a = movies.loc[:, "(no genres listed)":"Western"].corr().round(1)
 print(a)
 
