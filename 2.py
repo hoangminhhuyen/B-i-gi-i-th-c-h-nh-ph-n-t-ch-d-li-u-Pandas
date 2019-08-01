@@ -8,9 +8,9 @@ movies["year"] = movies["title"].apply(lambda x: x[-5:-1])
 movies.year=pd.to_numeric(movies['year'],errors='coerce',downcast='integer')
 #print(movies)
 
-# Tao ra cac cot dummy
+# Tao ra dummies
 movies = movies.join(movies.genres.str.get_dummies())
 
-# Tinh toan ma tran tuong quan
+# Tao bang tuong quan
 a = movies.loc[:, '(no genres listed)':'Western'].corr()
 print(a)
