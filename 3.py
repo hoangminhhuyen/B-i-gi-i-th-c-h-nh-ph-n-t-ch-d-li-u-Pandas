@@ -9,6 +9,8 @@ b = pd.read_csv("stopwords.txt", header=None)
 movies.title = movies.title.str[:-7]
 #lowercase title
 movies['title'] = movies['title'].str.lower()
+#xoá các khoảng trống
+movies.title = movies.title.str.strip() 
 #print(movies)
 
 #list of words in title by frequency
