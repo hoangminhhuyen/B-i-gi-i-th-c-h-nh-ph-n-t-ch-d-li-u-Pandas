@@ -3,7 +3,7 @@ from itertools import chain
 from collections import Counter
 
 movies = pd.read_csv("movies.csv")
-b = pd.read_csv("stopwords.txt", header=None)
+b = pd.read_csv("stopwords.csv", header=None)
 
 #tách year ra khỏi title
 movies.title = movies.title.str[:-7]
